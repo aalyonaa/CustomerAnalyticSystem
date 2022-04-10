@@ -1,0 +1,53 @@
+﻿<Window x:Class="CustomerAnalyticSystem.UI.EditStatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomerAnalyticSystem.UI"
+        mc:Ignorable="d"
+        Title="Статусы заказов" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="ListViewStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="0">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="Width" Value="auto" />
+                    <Setter Property="BorderBrush" Value="LightGray" />
+                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+
+                    <GridViewColumn Header="Статусы" Width="400"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="ButtonAddStatus" Content="Добавить" HorizontalAlignment="Center"  
+                    VerticalAlignment="Center" Click="ButtonAddStatus_Click" Height="25" Width="100" 
+                    Grid.Column="0" Grid.Row="1" BorderBrush="#FF575958"  Background="#FFBCEEC3"/>
+            <Button x:Name="ButtonEditStatus" Content="Редактировать" HorizontalAlignment="Center"  
+                    VerticalAlignment="Center" Grid.Column="1" Click="ButtonEditStatus_Click" Height="25" Width="100" Grid.Row="1" BorderBrush="#FF575958"  Background="#FFCAE9F3"/>
+            <Button x:Name="ButtonDeleteStatus" Content="Удалить" HorizontalAlignment="Center"  VerticalAlignment="Center" 
+                    Grid.Column="2" Click="ButtonDeleteStatus_Click" Height="25" Width="100" Grid.Row="1" BorderBrush="#FF575958"  Background="#FFE98585"/>
+            <TextBox x:Name="TextBoxNewStatus" HorizontalAlignment="Center"  Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="3" Width="300" Height="50" Margin="0,15,0,0"/>
+        </Grid>
+
+    </Grid>
+</Window>

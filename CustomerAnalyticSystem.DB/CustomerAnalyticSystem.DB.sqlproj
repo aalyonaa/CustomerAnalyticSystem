@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>CustomerAnalyticSystem.DB</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{e47e056c-c867-4ff1-b7a0-8148f3a927c8}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>CustomerAnalyticSystem.DB</RootNamespace>
+    <AssemblyName>CustomerAnalyticSystem.DB</AssemblyName>
+    <ModelCollation>1049,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Cyrillic_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <TargetFrameworkProfile />
+    <PermissionSet>SAFE</PermissionSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Stored Procedures\CRUD" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Product" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Group" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Grade" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Customer" />
+    <Folder Include="dbo\Stored Procedures\CRUD\CustomerType" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Contact" />
+    <Folder Include="dbo\Stored Procedures\CRUD\ContactType" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Tag\" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Product_Tag\" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Comment" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Check" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Order" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Status" />
+    <Folder Include="dbo\Stored Procedures\CRUD\Preferences" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Product.sql" />
+    <Build Include="dbo\Tables\Group.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product\AddProduct.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product\UpdateProductById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product\GetProductById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product\DeleteProductById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Group\AddGroup.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Group\DeleteGroupById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Group\GetGroupById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Group\UpdateGroupById.sql" />
+    <Build Include="dbo\Tables\CustomerType.sql" />
+    <Build Include="dbo\Tables\Customer.sql" />
+    <Build Include="dbo\Tables\ContactType.sql" />
+    <Build Include="dbo\Tables\Contact.sql" />
+    <Build Include="dbo\Tables\Comment.sql" />
+    <Build Include="dbo\Tables\Check.sql" />
+    <Build Include="dbo\Tables\Order.sql" />
+    <Build Include="dbo\Tables\Status.sql" />
+    <Build Include="dbo\Tables\Tag.sql" />
+    <Build Include="dbo\Tables\Product_Tag.sql" />
+    <Build Include="dbo\Tables\Grade.sql" />
+    <Build Include="dbo\Tables\Preferences.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllProductInfoById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Group\GetAllGroup.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product\GetAllProduct.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllGroupsWithProducts.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Grade\AddGrade.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Grade\UpdateGradeById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Grade\DeleteGradeById.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllOrderInfoByOrderId.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\CustomerType\UpdateCustomerTypeById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\CustomerType\DropCustomerTypeById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\CustomerType\AddCustomerType.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\CustomerType\GetCustomerTypeById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Customer\UpdateCustomerById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Customer\AddCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Customer\DropCustomerById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Customer\GetCustomerById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Contact\AddContact.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Contact\DeleteContact.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Contact\GetAllContact.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Contact\GetContactById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Contact\UpdateContact.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\ContactType\AddContactType.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\ContactType\DeleteContactType.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\ContactType\GetAllContactType.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\ContactType\GetContactTypeById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\ContactType\UpdateContactType.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllProductsByTag.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllPreferencesByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllGradesByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllCommentByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllContactByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\GetCustomerByIdWithCustomerType.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllOrdersByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Customer\GetAllCustomer.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Tag\AddTag.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product_Tag\GetAllProduct_Tag.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product_Tag\GetProduct_TagById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product_Tag\UpdateProduct_TagById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product_Tag\DeleteProduct_TagById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Product_Tag\AddProduct_Tag.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Tag\GetAllTags.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Tag\GetTagById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Tag\UpdateTagById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Tag\DeleteTagById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Comment\GetAllComment.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Comment\GetCommentById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Comment\AddComment.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Comment\DeleteCommentById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Comment\UpdateCommentById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Check\GetAllCheck.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Check\GetCheckById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Check\AddCheck.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Check\DeleteCheckById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Check\UpdateCheckById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\CustomerType\GetAllCustomerType.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Status\GetAllStatus.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Status\GetStatusById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Status\UpdateStatusById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Status\DeleteStatusById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Status\AddStatus.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Order\AddOrder.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Order\DeleteOrderById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Order\UpdateOrderById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Order\GetOrderById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Order\GetAllOrders.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllTagsWithMarksByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Preferences\AddPreference.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Preferences\GetAllPreferences.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Grade\GetAllGrades.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Grade\GetGradeById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Preferences\GetPreferenceById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Preferences\DeletePreferenceById.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\Preferences\UpdatePreferenceById.sql" />
+    <Build Include="dbo\Stored Procedures\GetCustomersWithPreferenceByProductId.sql" />
+    <Build Include="dbo\Stored Procedures\GetNumberOfTagsInOrderByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\AGetAllGradesByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllPreferencesInfoByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\AllMarksInCheckByCustomerId.sql" />
+    <Build Include="dbo\Stored Procedures\CountAllTagsInOrders.sql" />
+    <Build Include="dbo\Stored Procedures\CountAllProductsInOrders.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllProductsByGroupId.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllProductsWithGroups.sql" />
+    <Build Include="dbo\Stored Procedures\CRUD\GetAllTagsByProductId.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteProduct_TagByTagIdAndProductId.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllCustomerWithContactAndContactType.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllSortedComments.sql" />
+    <Build Include="dbo\Stored Procedures\GetOrderModel.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllOrdersByStatusId.sql" />
+    <Build Include="dbo\Stored Procedures\GetCheckByOrderId.sql" />
+    <Build Include="dbo\Stored Procedures\GetAllContactWithContactTypeByCustomerId.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="CustomerAnalyticSystem.DB.refactorlog" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

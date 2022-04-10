@@ -1,0 +1,131 @@
+﻿<Window x:Class="CustomerAnalyticSystem.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomerAnalyticSystem.UI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Клиенты">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+
+                    </Grid.ColumnDefinitions>
+                    <ListView x:Name="ListViewLoans" d:ItemsSource="{d:SampleData ItemCount=4}" ItemsSource="{Binding Effects}" SelectedIndex="0" SelectionChanged="ListViewLoans_SelectionChanged" 
+                              FontSize="12" FontFamily="Bahnschrift SemiLight" FontStretch="Normal" FontStyle="Normal" FontWeight="Heavy" 
+                              IsSynchronizedWithCurrentItem="True" SelectionMode="Single" BorderBrush="#89EF0101" BorderThickness="0,0,0,0" 
+                              Background="White" Foreground="#DD0F9ECE" Margin="608,0,0,0">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Width" Value="auto" />
+                                <Setter Property="BorderBrush" Value="LightGray" />
+                                <Setter Property="BorderThickness" Value="0,0,0,1" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="№"  DisplayMemberBinding="{Binding Id}" />
+                                <GridViewColumn Header="Имя"  DisplayMemberBinding="{Binding FirstName}"/>
+                                <GridViewColumn Header="Фамилия"  DisplayMemberBinding="{Binding LastName}"/>
+
+
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Button x:Name="ButtonCreateNewCustomer" Content="Новый клиент" HorizontalAlignment="Center" Margin="0,39,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="ButtonOpenInfoByCustomer" Content="Открыть" HorizontalAlignment="Left" Margin="220,49,0,0" VerticalAlignment="Top"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="358,130,0,0" VerticalAlignment="Top" Width="124"/>
+                    <Label Content="Выберите тип клиента" HorizontalAlignment="Left" Margin="358,104,0,0" VerticalAlignment="Top" Width="133"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Products">
+                <Border>
+                    <Grid ShowGridLines="True" Background="#FFE5E5E5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <ListView x:Name="Products" d:ItemsSource="{d:SampleData ItemCount=4}" ItemsSource="{Binding Effects}" SelectedIndex="0" SelectionChanged="ListViewLoans_SelectionChanged" 
+                              FontSize="12" FontFamily="Bahnschrift SemiLight" FontStretch="Normal" FontStyle="Normal" FontWeight="Heavy" 
+                              IsSynchronizedWithCurrentItem="True" SelectionMode="Single" BorderBrush="#89EF0101" BorderThickness="0,0,0,0" 
+                              Background="White" Foreground="#DD0F9ECE" Margin="608,0,0,0">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    <Setter Property="Width" Value="auto" />
+                                    <Setter Property="BorderBrush" Value="LightGray" />
+                                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Header="№"  DisplayMemberBinding="{Binding Id}" />
+                                    <GridViewColumn Header="Название"  DisplayMemberBinding="{Binding Name}"/>
+                                    <GridViewColumn Header="Остаток"  DisplayMemberBinding="{Binding Amount}"/>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <Button x:Name="ButtonCreateNewProduct" Content="Новый продукт" HorizontalAlignment="Left" Margin="166,34,0,0" VerticalAlignment="Top"/>
+                        <Button x:Name="ButtonOpenInfoByProduct" Content="Открыть" HorizontalAlignment="Left" Margin="319,91,0,0" VerticalAlignment="Top"/>
+                        <ComboBox HorizontalAlignment="Left" Margin="397,46,0,0" VerticalAlignment="Top" Width="120"/>
+                        <Label Content="Выберите группу" HorizontalAlignment="Left" Margin="397,20,0,0" VerticalAlignment="Top" Width="120"/>
+                        <Label Content="Поиск по тэгу" HorizontalAlignment="Left" Margin="408,91,0,0" VerticalAlignment="Top"/>
+                        <ComboBox HorizontalAlignment="Left" Margin="408,122,0,0" VerticalAlignment="Top" Width="120"/>
+                        <Label Content="тут все тэги с сортировкой по алфавиту мб" HorizontalAlignment="Left" Margin="345,133,0,0" VerticalAlignment="Top"/>
+                        <Button Content="+" HorizontalAlignment="Left" Margin="533,122,0,0" VerticalAlignment="Top"/>
+                        <Button Content="+" HorizontalAlignment="Left" Margin="522,48,0,0" VerticalAlignment="Top"/>
+                    </Grid>
+                </Border>
+            </TabItem>
+            <TabItem Header="Orders">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="TextBoxOrderId" HorizontalAlignment="Left" Margin="50,47,0,0" Text="write id" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="18"/>
+                    <Button x:Name="ButtonAccept" Content="GetAllOrders" HorizontalAlignment="Left" Margin="466,376,0,0" VerticalAlignment="Top" Width="120" Click="ButtonAccept_Click" Height="20"/>
+                    <TextBox x:Name="TextBoxInformationAboutOrder" HorizontalAlignment="Left" Margin="50,0,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Height="165"/>
+                    <StackPanel x:Name="StackPanelAllOrders" Grid.Column="1" Background="#FFFBC8C8"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="CUSTOMERSBIAAAAAD">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="143*"/>
+                        <ColumnDefinition Width="651*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="99,148,0,0" VerticalAlignment="Top" Height="180" Width="358" Grid.ColumnSpan="2"/>
+                    <ComboBox HorizontalAlignment="Left" Margin="20,43,0,0" VerticalAlignment="Top" Width="716" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem" HorizontalAlignment="Center" Height="20" VerticalAlignment="Center" Width="54">
+                <Grid Background="#FFE5E5E5">
+                    <Button Content="Button" HorizontalAlignment="Left" Margin="215,121,0,0" VerticalAlignment="Top"/>
+                    <ListView x:Name="ListViewProducts" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="0" Margin="5,10,5,193">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Группа" Width="202" DisplayMemberBinding="{Binding GroupId}"/>
+                                <GridViewColumn Header="Наименование" Width="202" DisplayMemberBinding="{Binding Name}"/>
+                                <GridViewColumn Header="Описание товара" Width="202" DisplayMemberBinding="{Binding Description}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <ComboBox x:Name="ComboBoxTags" HorizontalAlignment="Left" Margin="244,277,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBoxTags_SelectionChanged"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        
+
+    </Grid>
+
+</Window>

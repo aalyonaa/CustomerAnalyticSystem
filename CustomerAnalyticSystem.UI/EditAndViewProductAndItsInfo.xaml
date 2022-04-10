@@ -1,0 +1,25 @@
+﻿<Window x:Class="CustomerAnalyticSystem.UI.EditAndViewProductAndItsInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomerAnalyticSystem.UI"
+        mc:Ignorable="d"
+        Title="EditAndViewProductAndItsInfo" Height="318" Width="408">
+    <Grid>
+        <Label Content="Название" HorizontalAlignment="Left" Margin="18,30,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="18,61,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Комментарий" HorizontalAlignment="Left" Margin="18,84,0,0" VerticalAlignment="Top"/>
+        <Label Content="Группа товаров" HorizontalAlignment="Left" Margin="18,133,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="18,110,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Margin="18,159,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Тэги" HorizontalAlignment="Left" Margin="18,192,0,0" VerticalAlignment="Top"/>
+        <Label Content="что-то чтобы выбртаь тэги" HorizontalAlignment="Left" Margin="18,218,0,0" VerticalAlignment="Top"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="143,161,0,0" VerticalAlignment="Top"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="181,221,0,0" VerticalAlignment="Top"/>
+        <Button Content="Оценки пользователей" HorizontalAlignment="Left" Margin="194,70,0,0" VerticalAlignment="Top"/>
+        <Button Content="Предпочтения пользователей" HorizontalAlignment="Left" Margin="194,108,0,0" VerticalAlignment="Top"/>
+        <Button Content="История заказов" HorizontalAlignment="Left" Margin="194,136,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

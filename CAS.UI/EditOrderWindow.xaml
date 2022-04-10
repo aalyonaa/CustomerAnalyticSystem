@@ -1,0 +1,95 @@
+﻿<Window x:Class="CustomerAnalyticSystem.UI.EditOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CAS.UI"
+        mc:Ignorable="d"
+        Title="Редактор заказа" Height="500" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="161*"/>
+            <RowDefinition Height="263*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="60*"/>
+        </Grid.RowDefinitions>
+        <ListView x:Name="ListViewChecksEditOrderWndw" d:ItemsSource="{d:SampleData ItemCount=5}" Grid.Row="0">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="Width" Value="auto" />
+                    <Setter Property="BorderBrush" Value="LightGray" />
+                    <Setter Property="BorderThickness" Value="0,0,0,1" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="40"/>
+                    <GridViewColumn Header="Наименование" Width="120"/>
+                    <GridViewColumn Header="Количество" Width="120"/>
+                    <GridViewColumn Header="Оценка" Width="120"/>
+                
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Margin="0,161,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130*"/>
+                <ColumnDefinition Width="249*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Дата заказа" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="0"/>
+                <Label Content="Товар" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="1"/>
+                <Label Content="Количество" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="2"/>
+                <Label Content="Сумма заказа" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="3"/>
+                <Label Content="Оценка" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="4"/>
+                <Label Content="Статус заказа" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Row="5"/>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <DatePicker x:Name="DatePickerOrder" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="200"/>
+                <ComboBox x:Name="ComboBoxChooseProductEditOrderWndw" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Grid.Row="1" Height="20"/>
+                <ComboBox x:Name="ComboBoxChooseMarkEditOrderWndw" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Grid.Row="4" Height="20"/>
+                <TextBox x:Name="TextBoxAmountOfProductEditOrderWndw" HorizontalAlignment="Left" Grid.Row="2" 
+                         TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="20" PreviewTextInput="TextBoxAmountOfProductEditOrderWndw_PreviewTextInput"/>
+                <TextBox x:Name="TextBoxPriceOfUnitEditOrderWndw" HorizontalAlignment="Left" Grid.Row="3" 
+                         TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="200" Height="20" PreviewTextInput="TextBoxPriceOfUnitEditOrderWndw_PreviewTextInput"/>
+                <ComboBox HorizontalAlignment="Left"  Grid.Row="5" VerticalAlignment="Center" Width="100" Height="20"/>
+                <Button x:Name="ButtonEditOrderStatus" Content="Редактировать" HorizontalAlignment="Left"  
+                        Grid.Row="5" VerticalAlignment="Center" Width="67" Height="20" Margin="133,0,0,0" FontSize="8" Click="ButtonEditOrderStatus_Click"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButtonAddPositionEditOrderWndw" Content="Добавить позицию" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Column="0" Width="150" Height="30" BorderBrush="#FF575958"  Background="#FFCAE9F3"/>
+            <Button x:Name="ButtonDeletePositionEditOrderWndw" Content="Удалить позицию" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Column="1" Width="150" Height="30" Background="#FFEDB193"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButtonSaveChangesEditOrderWndw" BorderBrush="#FF575958"  Background="#FFBCEEC3" Content="Сохранить изменения" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Column="0" Width="150" Height="30"/>
+            <Button x:Name="ButtonDeleteOrderEditOrderWndw" BorderBrush="#FF575958"  Background="#FFE98585"  Content="Удалить заказ" HorizontalAlignment="Center"  VerticalAlignment="Center" Grid.Column="1" Width="150" Height="30" Click="ButtonDeleteOrderEditOrderWndw_Click"/>
+        </Grid>
+
+    </Grid>
+</Window>
